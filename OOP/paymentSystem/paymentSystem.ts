@@ -85,6 +85,6 @@ const paypalPayment = new PayPal(75, "john.doe@paypal.com");
 
 const transaction1 = new Transaction(user1, creditCardPayment);
 console.log(transaction1.processTransaction());
-
+console.log("----------------")
 const transaction2 = new Transaction(user1, paypalPayment);
 console.log(transaction2.processTransaction());
