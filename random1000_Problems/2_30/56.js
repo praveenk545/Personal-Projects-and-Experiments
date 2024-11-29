@@ -1,22 +1,20 @@
-const MergeSort = function (arr) {
-  // Base case: if the array has 1 or 0 elements, it's already sorted
+const MergeSort = (arr) => {
   if (arr.length <= 1) {
-    return arr;
+    return arr; // Base case: If array has 1 or no element, it's already sorted
   }
 
-  // Find the middle index of the array
   const middle = Math.floor(arr.length / 2);
 
-  // Recursively split the array into two halves
-  const left = MergeSortHelper(arr, 0, middle);  // Left subarray
-  const right = MergeSortHelper(arr, middle, arr.length); // Right subarray
+  // Recursively split the array into left and right halves
+  const left = MergeSortHelper(arr, 0, middle);
+  const right = MergeSortHelper(arr, middle, arr.length);
 
-  // Merge the two sorted subarrays
+  // Merge the two sorted halves
   return merge(left, right);
 };
 
-// Helper function to get the subarray (without using slice)
-const MergeSortHelper = function (arr, start, end) {
+// Helper function to manually create subarrays
+const MergeSortHelper = (arr, start, end) => {
   let subarray = [];
   for (let i = start; i < end; i++) {
     subarray.push(arr[i]);
@@ -24,36 +22,37 @@ const MergeSortHelper = function (arr, start, end) {
   return subarray;
 };
 
-const merge = function (left, right) {
-  let result = [];
-  let leftIndex = 0;
-  let rightIndex = 0;
+// Merge function to merge two sorted arrays into one
+const merge = (left, right) => {
+  let res = [];
+  let i = 0;
+  let j = 0;
 
-  // Merge the two arrays while there are elements in both
-  while (leftIndex < left.length && rightIndex < right.length) {
-    if (left[leftIndex] < right[rightIndex]) {
-      result.push(left[leftIndex]);
-      leftIndex++;
+  // Merge while both arrays have elements
+  while (i < left.length && j < right.length) {
+    if (left[i] < right[j]) {
+      res.push(left[i]);
+      i++;
     } else {
-      result.push(right[rightIndex]);
-      rightIndex++;
+      res.push(right[j]);
+      j++;
     }
   }
 
-  // If there are remaining elements in the left array, add them to the result
-  while (leftIndex < left.length) {
-    result.push(left[leftIndex]);
-    leftIndex++;
+  // If there are remaining elements in left
+  while (i < left.length) {
+    res.push(left[i]);
+    i++;
   }
 
-  // If there are remaining elements in the right array, add them to the result
-  while (rightIndex < right.length) {
-    result.push(right[rightIndex]);
-    rightIndex++;
+  // If there are remaining elements in right
+  while (j < right.length) {
+    res.push(right[j]);
+    j++;
   }
 
-  return result;
+  return res;
 };
 
 let arr = [38, 27, 43, 3, 9, 82, 10];
-console.log(MergeSort(arr));
+console.log(MergeSort(arr)); // Expected output: [3, 9, 10, 27, 38, 43, 82]
