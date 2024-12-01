@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
-import { faDashboard,faHome,faUserCircle,faTasks,faShareFromSquare,faProjectDiagram ,faCog,faFolder} from '@fortawesome/free-solid-svg-icons';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { faDashboard,faHome,faUsersViewfinder,faUserCircle,faSpinner,faTasks,faUsers,faCheckCircle,faShareFromSquare,faFolderOpen,faProjectDiagram ,faCog,faFolder} from '@fortawesome/free-solid-svg-icons';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
-  public sidebarShow: boolean = false;
+export class DashboardComponent implements AfterViewInit {
   className="backGroundColor"
   itemColor="itemColor"
   secondView="secondView"
-  icon={faDashboard,faHome,faUserCircle,faTasks,faShareFromSquare,faProjectDiagram,faCog,faFolder}
+  icon={faDashboard,faHome,faCheckCircle,faSpinner,faUsersViewfinder,
+    faFolderOpen,faUsers,faUserCircle,faTasks,faShareFromSquare,faProjectDiagram,faCog,faFolder}
   isSubMenuOpen: { [key: string]: boolean } = {
     projects: false
   };
@@ -20,4 +21,13 @@ export class DashboardComponent {
   toggleSubMenu(menu: string): void {
     this.isSubMenuOpen[menu] = !this.isSubMenuOpen[menu]; // Use bracket notation
   }
+ 
+
+  // After View Init to Load Charts
+  
+
+  ngAfterViewInit() {
+   
+  }
+  
 }
