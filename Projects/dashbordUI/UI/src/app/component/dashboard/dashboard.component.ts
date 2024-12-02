@@ -8,9 +8,7 @@ import { Chart } from 'chart.js';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements AfterViewInit {
-  className="backGroundColor"
-  itemColor="itemColor"
-  secondView="secondView"
+
   icon={faDashboard,faHome,faCheckCircle,faSpinner,faUsersViewfinder,
     faFolderOpen,faUsers,faUserCircle,faTasks,faShareFromSquare,faProjectDiagram,faCog,faFolder}
   isSubMenuOpen: { [key: string]: boolean } = {

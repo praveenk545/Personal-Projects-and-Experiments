@@ -4,20 +4,7 @@
     font-size: 16px;
 }
 
-.backGroundColor{
-    background-color: hsl(282.35deg 14.29% 23.33%);
-    color: #fff;
-    cursor: pointer;
-}
-.itemColor{
-    background-color: hsl(315deg 18.75% 25.1%);
-    color: #FFF;
-    cursor: pointer;
-}
-.secondView{
-    background: #281e28;
-    color:#fff
-}
+
 .row .col {
     display: flex;
     align-items: center; /* Vertically align content */
