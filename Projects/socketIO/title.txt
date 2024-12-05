@@ -1,0 +1,7 @@
+ install:
+  npm init -y
+  npm i express
+  npm i socket.io
+  npm i uuid
+run :
+ node server.js
