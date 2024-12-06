@@ -15,7 +15,7 @@
             </div>
           </div>
           </div>
-          <div class="todo col p-2  rounded ">
+          <div class="bg-dark col p-2  rounded ">
             <h4 class="d-flex align-items-start">TODO in progress completed</h4>
             <div class= "d-flex justify-content-start gap-1">
               <button class="btn btn-info">Edit</button>
@@ -38,17 +38,17 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>mdo</td>
+                    <th scope="row"><fa-icon type="button" [icon]="icons.faListCheck" (click)="viewTaskList()"></fa-icon></th>
+                    <td>work</td>
+                    <td>{{Level.easy|json}}</td>
+                    <td>{{"12/12/2024"|date}}</td>
                   </tr>
                  
                 </tbody>
               </table>
             </div>
             <!-- progress Bar -->
-             <div class="todo col p-2  rounded ">
+             <div class="bg-dark col p-2  rounded ">
               <h2 class="db__top-stat">Status/Progress</h2>
 
               <div class="widget-content-wrapper">
@@ -75,8 +75,13 @@
        </div>
       <!-- progress end -->
   </div>
-  
-
 </div>
+
+<!-- popup model -->
+<section>
+<!-- Large modal -->
+
+
+</section>
 
 

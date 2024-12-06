@@ -1,58 +1,52 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { ErrorHandler } from '@angular/core';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-
-
-import { AppComponent } from './app.component';
-
-import { BaseChartDirective, provideCharts, withDefaultRegisterables,  } from 'ng2-charts';
-import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';  // Add this import
+import { MatNativeDateModule } from '@angular/material/core';  // Add this import
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { TodoprogressComponent } from './component/todoprogress/todoprogress.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 
-// import { ChartsModule } from 'ng2-charts'
+import { AppComponent } from './app.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { TodoprogressComponent } from './component/todoprogress/todoprogress.component';
+import { PopupmodelComponent } from './component/dialog/popupmodel/popupmodel.component';
 
-
- class CustomErrorHandler implements ErrorHandler{
-  handleError(error: any): void {
-    console.log('An error occured',error)
-  }
- }
+// class CustomErrorHandler implements ErrorHandler {
+//   handleError(error: any): void {
+//     console.log('An error occurred', error);
+//   }
+// }
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     TodoprogressComponent,
-
- 
+    PopupmodelComponent,
   ],
   imports: [
     CommonModule,
-    // ChartsModule,
     BrowserModule,
-    AppRoutingModule,
     ReactiveFormsModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatInputModule,
+    MatDatepickerModule,  // Add this import
+    MatNativeDateModule,  // Add this import
     FormsModule,
     HttpClientModule,
     RouterModule,
-     FontAwesomeModule,
-    BaseChartDirective,
-    NgApexchartsModule
-    
+    FontAwesomeModule,
+    NgApexchartsModule,
   ],
   providers: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
