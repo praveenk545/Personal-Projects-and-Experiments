@@ -18,6 +18,8 @@ import { AppComponent } from './app.component';
 import { BaseChartDirective, provideCharts, withDefaultRegisterables,  } from 'ng2-charts';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TodoprogressComponent } from './component/todoprogress/todoprogress.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 // import { ChartsModule } from 'ng2-charts'
 
@@ -32,6 +34,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   declarations: [
     AppComponent,
     DashboardComponent,
+    TodoprogressComponent,
 
  
   ],
@@ -45,7 +48,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HttpClientModule,
     RouterModule,
      FontAwesomeModule,
-    BaseChartDirective
+    BaseChartDirective,
+    NgApexchartsModule
     
   ],
   providers: [],
