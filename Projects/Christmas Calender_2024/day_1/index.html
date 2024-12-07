@@ -14,13 +14,20 @@
 </head>
 <body>
     <script src="../day_1/draw.js"> </script>
+
     <script src="../day_1/items/star.js"> </script>
     <script src="../day_1/items/ball.js"> </script>
+    <script src="../day_1/items/sock.js"> </script>
+    <script src="../day_1/items/cane.js"> </script>
+    <script src="../day_1/items/bow.js"> </script>
    <script>
     const cellSize=200;
     const drawItemFunctions=[];
     drawItemFunctions[1]=drawStar;
     drawItemFunctions[2]=drawBall;
+    drawItemFunctions[3]=drawSock;
+    drawItemFunctions[4]=drawCane;
+    drawItemFunctions[5]=drawBow;
 
     for(let day=1;day<=24;day++){
         const canvas=document.createElement("canvas");

@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { TodoprogressComponent } from './component/todoprogress/todoprogress.component';
 import { PopupmodelComponent } from './component/dialog/popupmodel/popupmodel.component';
+import { TodolistComponent } from './component/todolist/todolist.component';
 
 // class CustomErrorHandler implements ErrorHandler {
 //   handleError(error: any): void {
@@ -29,6 +30,7 @@ import { PopupmodelComponent } from './component/dialog/popupmodel/popupmodel.co
     DashboardComponent,
     TodoprogressComponent,
     PopupmodelComponent,
+    TodolistComponent,
   ],
   imports: [
     CommonModule,
