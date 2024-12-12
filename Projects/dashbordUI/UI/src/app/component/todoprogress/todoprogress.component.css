@@ -13,3 +13,65 @@
     background-color: #29293d;
     color: white;
    } */
+
+   element.style {
+    color: rgb(252 254 255);
+    font-size: 12px;
+    font-weight: 400;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.modal-header{
+  background-color: #29293d;
+}
+.modal-btn{
+  background-color: #1e1e2f;
+  color: #fff;
+}
+/* Style for pagination container */
+.card-footer {
+  padding: 1rem;
+  background-color: #343a40; /* Dark background for the pagination */
+  border-top: 1px solid #dee2e6; /* Light border for separation */
+}
+
+/* Style for the pagination buttons */
+.pagination {
+  margin-bottom: 0;  /* Remove default margin at the bottom */
+}
+
+.page-link {
+  color: #fff; /* White color for text */
+  background-color: #495057; /* Dark background for inactive links */
+  border: 1px solid #6c757d; /* Border for page links */
+  font-size: 14px; /* Adjust font size */
+  padding: 8px 16px; /* Padding for the buttons */
+  border-radius: 50%; /* Make the page buttons circular */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for page buttons */
+.page-link:hover {
+  background-color: #007bff; /* Highlight on hover */
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Active page styles */
+.page-item.active .page-link {
+  background-color: #28a745; /* Green color for the active page */
+  border-color: #28a745;
+  color: #fff;
+}
+
+/* Disabled page styles */
+.page-item.disabled .page-link {
+  background-color: #6c757d; /* Grey color for disabled pages */
+  border-color: #6c757d;
+  color: #fff;
+  pointer-events: none; /* Disable clicks on disabled buttons */
+}
+
+/* Adjust the previous and next buttons */
+.page-item .page-link {
+  font-weight: bold;
+}

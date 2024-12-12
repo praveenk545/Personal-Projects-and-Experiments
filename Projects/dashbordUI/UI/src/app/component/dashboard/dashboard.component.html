@@ -2,33 +2,33 @@
   <!-- Sidebar -->
   <aside class="sidebar  p-3 col-12 col-md-3 ">
     <div class="sidebar-header text-center mb-4">
-      <span class="d-flex align-items-center">
-        <fa-icon [icon]="icon.faTasks" class="me-2 d-none d-md-inline"></fa-icon>
+      <span class="d-flex align-items-center text-white">
+        <fa-icon [icon]="icon.faTasks" class="me-2 d-none d-md-inline "></fa-icon>
         <h4 class="mb-0 fw-bold">Task Manager</h4>
       </span>
     </div>
     <nav>
       <ul class="menu list-unstyled">
-        <li class="mb-3 d-flex align-items-center" (click)="toggleSubMenu('dashboard')">
+        <li class="mb-3 d-flex align-items-center text-white" (click)="toggleSubMenu('dashboard')">
           <fa-icon [icon]="icon.faDashboard" class="me-2"></fa-icon>
-          <span class="d-none d-md-inline">Dashboard</span>
+          <span class="d-none d-md-inline ">Dashboard</span>
         </li>
-        <li class="mb-3 d-flex align-items-center" (click)="toggleSubMenu('teams')">
+        <li class="mb-3 d-flex align-items-center text-white" (click)="toggleSubMenu('teams')">
           <fa-icon [icon]="icon.faUsers" class="me-2"></fa-icon>
-          <span class="d-none d-md-inline">Teams</span>
+          <span class="d-none d-md-inline ">Teams</span>
         </li>
-        <li class="mb-3 d-flex align-items-center" (click)="toggleSubMenu('projects')">
+        <li class="mb-3 d-flex align-items-center text-white" (click)="toggleSubMenu('projects')">
           <fa-icon [icon]="icon.faFolderOpen" class="me-2"></fa-icon>
-          <span class="d-none d-md-inline">Projects</span>
+          <span class="d-none d-md-inline ">Projects</span>
         </li>
-        <ul *ngIf="isSubMenuOpen['projects']" class="submenu ps-4 list-unstyled">
+        <ul *ngIf="isSubMenuOpen['projects']" class="submenu ps-4 list-unstyled text-white">
           <li class="mb-2">Project 1</li>
           <li class="mb-2">Project 2</li>
           <li class="mb-2">Project 3</li>
         </ul>
-        <li class="d-flex align-items-center">
+        <li class="d-flex align-items-center text-white">
           <fa-icon [icon]="icon.faCog" class="me-2"></fa-icon>
-          <span class="d-none d-md-inline">Settings</span>
+          <span class="d-none d-md-inline ">Settings</span>
         </li>
       </ul>
     </nav>
@@ -39,8 +39,8 @@
     <!-- Header -->
     <header class="dashboard-header d-flex justify-content-between align-items-center mb-4">
       
-      <span class="d-flex align-items-center">
-        <fa-icon [icon]="icon.faUsersViewfinder" class="me-2 d-none d-md-inline"></fa-icon>
+      <span class="d-flex align-items-center text-white">
+        <fa-icon [icon]="icon.faUsersViewfinder" class="me-2 d-none d-md-inline "></fa-icon>
         <h2 class="h5 mb-0">Dashboard Overview</h2>
        
       </span>

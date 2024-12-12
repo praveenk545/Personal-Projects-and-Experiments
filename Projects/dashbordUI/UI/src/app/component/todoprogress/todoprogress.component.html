@@ -36,16 +36,43 @@
                     <!-- <th scope="col">Assigned To</th> -->
                   </tr>
                 </thead>
-                <tbody>
+                <tbody style="font-size: 14px;">
                   <tr>
-                    <th scope="row"><fa-icon type="button" [icon]="icons.faListCheck" (click)="viewTaskList()"></fa-icon></th>
+                    <!-- Button trigger modal -->
+                    <th scope="row"><fa-icon type="button" data-toggle="modal" data-target="#exampleModal" [icon]="icons.faEye" (click)="viewTaskList()"></fa-icon></th>
                     <td>work</td>
                     <td>{{Level.easy|json}}</td>
                     <td>{{"12/12/2024"|date}}</td>
                   </tr>
-                 
+
+                  
                 </tbody>
+              
+                <!-- Pagination -->
+    
               </table>
+              <div class="card-footer mb-2">
+                <nav aria-label="Page navigation">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item" [class.disabled]="!hasPrevious">
+                      <a class="page-link" (click)="changePage(currentPage - 1)" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+            
+                    <!-- Loop through page numbers -->
+                    <li class="page-item" *ngFor="let page of pageNumbers" [class.active]="page === currentPage">
+                      <a class="page-link" (click)="changePage(page)">{{ page }}</a>
+                    </li>
+            
+                    <li class="page-item" [class.disabled]="!hasNext">
+                      <a class="page-link" (click)="changePage(currentPage + 1)" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
             </div>
             <!-- progress Bar -->
              <div class="bg-dark col p-2  rounded ">
@@ -79,7 +106,122 @@
 
 <!-- popup model -->
 <section>
-<!-- Large modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header d-flex justify-content-between">
+        <h5 class="modal-title text-white" id="exampleModalLabel" >Task Form</h5>
+        <button type="button" class="close btn btn-danger d-flex align-items-end" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+          <!-- Form Container -->
+          <form [formGroup]="viewTaskFormView" class="row g-2">
+      
+            <!-- Task Name Field 1 -->
+            <div class="col-md-6">
+              <div class="form-floating mb-2">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Your Tasks">
+                <label for="floatingInput">Task</label>
+              </div>
+            </div>
+      
+            <!-- Task Name Field 2 (Duplicate Task) -->
+            <div class="col-md-6">
+              <div class="form-floating">
+                <select  class="form-select" class="form-control" id="floatingPriority" aria-label="Priority">
+                  <option class="form-control" selected value>Select your priority</option>
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                </select>
+                <label for="floatingPriority">Priority</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                
+                <textarea class="form-control" id="floatingdescription" placeholder="description" rows="4"></textarea>
+                <label for="floatingdescription">description</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="date" class="form-control" id="floatingDueDate" placeholder="dueDate">
+                <label for="floatingDueDate">Due Date</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="floatingstatus" placeholder="status">
+                <label for="floatingstatus">status</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="floatingTags" placeholder="tags" data-role="tagsinput">
+                <label for="floatingTags">Tags</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" class="form-control" formControlName="estimatedTime" placeholder="Estimated Time">
+                <label for="estimatedTime">Estimated Time</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" class="form-control" formControlName="assignedUser" placeholder="Assigned User">
+                <label for="assignedUser">Assigned User</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="date" class="form-control" formControlName="completionDate" placeholder="Completion Date">
+                <label for="completionDate">Completion Date</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="file" class="form-control" formControlName="attachments" placeholder="Attachments">
+                <label for="attachments">Attachments</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <textarea class="form-control" formControlName="comments" placeholder="Comments" rows="3"></textarea>
+                <label for="comments">Comments</label>
+              </div>
+            </div>
+
+            <div class="col-md-6"></div>
+      
+          </form>
+       
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger " data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-primary  ">Save changes</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
 
 
 </section>
